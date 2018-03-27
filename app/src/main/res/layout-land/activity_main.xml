@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--/*Connor Birnie
+S1630777
+CBIRNI200
+Main Display Page
+Makes use of a viewSwitcher to allow for 2 different ListViews
+*/-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/VIEWSWITCH"
+    android:screenOrientation="landscape"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/radio0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Current"
+                android:buttonTint="@color/grey"/>
+
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Planned RoadWorks"
+                android:buttonTint="@color/grey"/>
+
+        </RadioGroup>
+        <SearchView
+            android:id="@+id/searchView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:queryHint="search"></SearchView>
+
+        <ViewFlipper android:id="@+id/ViewFlipper01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ListView
+                android:id="@+id/hello"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:divider="#AB9B9F"
+                android:dividerHeight="1dp"
+                android:listSelector="@color/grey"
+                >
+            </ListView>
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ListView
+                    android:id="@+id/jeff"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="#AB9B9F"
+                    android:dividerHeight="1dp"
+                    android:listSelector="@color/grey"
+                    >
+                </ListView>
+            </android.support.constraint.ConstraintLayout>
+        </ViewFlipper>
+    </LinearLayout>
+</LinearLayout>
